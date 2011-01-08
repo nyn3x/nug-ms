@@ -1,4 +1,14 @@
-﻿namespace NHibernate3
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="BaseHttpHandler.cs" company="Henning Eiben">
+//   This is educational code.
+// </copyright>
+// <summary>
+//   An abstract base Http Handler for all your
+//   needs.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace NHibernate3
 {
     using System;
     using System.Net;
@@ -53,9 +63,9 @@
         /// reused between successive requests.
         /// </summary>
         /// <remarks>
-        /// Return true if this handler does not maintain
+        /// Return <c>true</c> if this handler does not maintain
         /// any state (generally a good practice).  Otherwise
-        /// returns false.
+        /// returns <c>false</c>.
         /// </remarks>
         public bool IsReusable
         {
@@ -63,9 +73,11 @@
         }
 
         /// <summary>
-        /// Processs the incoming HTTP request.
+        /// Process the incoming HTTP request.
         /// </summary>
-        /// <param name="context">Context.</param>
+        /// <param name="context">
+        /// Context.
+        /// </param>
         public void ProcessRequest(HttpContext context)
         {
             SetResponseCachePolicy(context.Response.Cache);
@@ -90,33 +102,11 @@
         #endregion
 
         /// <summary>
-        /// Handles the request.  This is where you put your
-        /// business logic.
+        /// The handle request.
         /// </summary>
-        /// <remarks>
-        /// <p>This method should result in a call to one 
-        /// (or more) of the following methods:</p>
-        /// <p><code>context.Response.BinaryWrite();</code></p>
-        /// <p><code>context.Response.Write();</code></p>
-        /// <p><code>context.Response.WriteFile();</code></p>
-        /// <p>
-        /// <code>
-        /// someStream.Save(context.Response.OutputStream);
-        /// </code>
-        /// </p>
-        /// <p>etc...</p>
-        /// <p>
-        /// If you want a download box to show up with a 
-        /// pre-populated filename, add this call here 
-        /// (supplying a real filename).
-        /// </p>
-        /// <p>
-        /// </p>
-        /// <code>Response.AddHeader("Content-Disposition"
-        /// , "attachment; filename=\"" + Filename + "\"");</code>
-        /// </p>
-        /// </remarks>
-        /// <param name="context">Context.</param>
+        /// <param name="context">
+        /// The context.
+        /// </param>
         public abstract void HandleRequest(HttpContext context);
 
         /// <summary>
@@ -124,7 +114,9 @@
         /// this method, handlers will not allow a respons to be
         /// cached.
         /// </summary>
-        /// <param name="cache">Cache.</param>
+        /// <param name="cache">
+        /// Cache.
+        /// </param>
         public virtual void SetResponseCachePolicy
             (HttpCachePolicy cache)
         {
@@ -138,19 +130,25 @@
         /// implement this and return true if the parameters are
         /// valid, otherwise false.
         /// </summary>
-        /// <param name="context">Context.</param>
-        /// <returns><c>true</c> if the parameters are valid,
-        /// otherwise <c>false</c></returns>
+        /// <param name="context">
+        /// Context.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if the parameters are valid,
+        /// otherwise <c>false</c>
+        /// </returns>
         public abstract bool ValidateParameters(HttpContext context);
 
         /// <summary>
         /// Helper method used to Respond to the request
         /// that the file was not found.
         /// </summary>
-        /// <param name="context">Context.</param>
+        /// <param name="context">
+        /// Context.
+        /// </param>
         protected void RespondFileNotFound(HttpContext context)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+            context.Response.StatusCode = (int) HttpStatusCode.NotFound;
             context.Response.End();
         }
 
@@ -159,10 +157,12 @@
         /// that the request in attempting to access a resource
         /// that the user does not have access to.
         /// </summary>
-        /// <param name="context">Context.</param>
+        /// <param name="context">
+        /// Context.
+        /// </param>
         protected void RespondForbidden(HttpContext context)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+            context.Response.StatusCode = (int) HttpStatusCode.Forbidden;
             context.Response.End();
         }
 
@@ -170,12 +170,14 @@
         /// Helper method used to Respond to the request
         /// that an error occurred in processing the request.
         /// </summary>
-        /// <param name="context">Context.</param>
+        /// <param name="context">
+        /// Context.
+        /// </param>
         protected void RespondInternalError(HttpContext context)
         {
             // It's really too bad that StatusCode property
             // is not of type HttpStatusCode.
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
             context.Response.End();
         }
     }

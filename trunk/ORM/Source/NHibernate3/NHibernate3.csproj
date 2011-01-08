@@ -113,7 +113,6 @@
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="CategoryImageHandler.cs" />
-    <Compile Include="Entities\Entitiy1.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Global.asax.cs">

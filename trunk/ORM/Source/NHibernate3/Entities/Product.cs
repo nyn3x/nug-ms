@@ -1,3 +1,12 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Product.cs" company="Henning Eiben">
+//   This is educational code.
+// </copyright>
+// <summary>
+//   The Product entity.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace NHibernate3.Entities
 {
     using FluentNHibernate.Mapping;
@@ -7,8 +16,19 @@ namespace NHibernate3.Entities
     /// </summary>
     public class Product : EntityBase<Product, int>
     {
-        public virtual string Name { get; set; }
+        #region Properties
+
+        /// <summary>
+        /// Gets or sets Category.
+        /// </summary>
         public virtual Category Category { get; set; }
+
+        /// <summary>
+        /// Gets or sets Name.
+        /// </summary>
+        public virtual string Name { get; set; }
+
+        #endregion
     }
 
     /// <summary>
@@ -16,10 +36,15 @@ namespace NHibernate3.Entities
     /// </summary>
     public class ProductMapping : ClassMap<Product>
     {
+        #region Constructors
+
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProductMapping"/> class. 
         /// Initializes a new instance of the <see cref="Product"/> class.
         /// </summary>
-        /// <remarks>Initializes a new OR-Mapping.</remarks> 
+        /// <remarks>
+        /// Initializes a new OR-Mapping.
+        /// </remarks>
         public ProductMapping()
         {
             Table("Products");
@@ -27,5 +52,7 @@ namespace NHibernate3.Entities
             Map(p => p.Name).Column("ProductName");
             References(p => p.Category).Column("CategoryID").LazyLoad();
         }
+
+        #endregion
     }
 }

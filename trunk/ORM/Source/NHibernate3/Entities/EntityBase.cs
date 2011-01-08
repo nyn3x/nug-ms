@@ -1,4 +1,15 @@
-﻿namespace NHibernate3.Entities
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EntityBase.cs" company="Henning Eiben">
+//   This is educational code.
+// </copyright>
+// <summary>
+//   An abstract base class for new entities providing basic, common features
+//   such as an  and a base implementation of
+//   .
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace NHibernate3.Entities
 {
     using System;
 
@@ -7,8 +18,12 @@
     /// such as an <see cref="Id"/> and a base implementation of 
     /// <see cref="IEquatable{T}"/>.
     /// </summary>
-    /// <typeparam name="TEntity">The type of the entity.</typeparam>
-    /// <typeparam name="TId">The type of the id of the entity.</typeparam>
+    /// <typeparam name="TEntity">
+    /// The type of the entity.
+    /// </typeparam>
+    /// <typeparam name="TId">
+    /// The type of the id of the entity.
+    /// </typeparam>
     public abstract class EntityBase<TEntity, TId> : IEquatable<TEntity>
         where TEntity : EntityBase<TEntity, TId>
     {
@@ -28,7 +43,9 @@
         /// Indicates whether the current object is equal to another object of
         /// the same type.
         /// </summary>
-        /// <param name="other">An object to compare with this object.</param>
+        /// <param name="other">
+        /// An object to compare with this object.
+        /// </param>
         /// <returns>
         /// <c>true</c> if the current object is equal to the 
         /// <paramref name="other"/> parameter; otherwise, <c>false</c>.
@@ -46,17 +63,21 @@
         /// Determines whether the specified <see cref="System.Object"/> is
         /// equal to this instance.
         /// </summary>
-        /// <param name="other">The <see cref="System.Object"/> to compare with
-        /// this instance.</param>
+        /// <param name="other">
+        /// The <see cref="System.Object"/> to compare with
+        /// this instance.
+        /// </param>
         /// <returns>
-        /// 	<c>true</c> if the specified <see cref="System.Object"/> is equal
+        /// <c>true</c> if the specified <see cref="System.Object"/> is equal
         /// 	to this instance; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals(object other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            //if (other.GetType() != typeof(TEntity)) return false;
+
+
+// if (other.GetType() != typeof(TEntity)) return false;
             return Equals((TEntity) other);
         }
 
@@ -69,7 +90,7 @@
         /// </returns>
         public override int GetHashCode()
         {
-            return ((Id.GetHashCode()*0x18d) ^ GetType().GetHashCode());
+            return (Id.GetHashCode()*0x18d) ^ GetType().GetHashCode();
         }
 
         /// <summary>
