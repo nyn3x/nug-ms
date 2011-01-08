@@ -4,8 +4,9 @@
 // </copyright>
 // <summary>
 //   An abstract base class for new entities providing basic, common features
-//   such as an  and a base implementation of
-//   .
+//   such as an  and a base implementation of.
+// 
+//   $Id$
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
