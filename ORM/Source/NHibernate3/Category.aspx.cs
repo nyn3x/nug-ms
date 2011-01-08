@@ -1,3 +1,12 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Category.aspx.cs" company="Henning Eiben">
+//   This is educational code.
+// </copyright>
+// <summary>
+//   The category.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace NHibernate3
 {
     using System;

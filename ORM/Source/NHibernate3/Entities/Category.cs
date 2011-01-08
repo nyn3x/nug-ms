@@ -1,3 +1,12 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Category.cs" company="Henning Eiben">
+//   This is educational code.
+// </copyright>
+// <summary>
+//   The Category entity.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace NHibernate3.Entities
 {
     using System.Collections.Generic;
@@ -13,6 +22,9 @@ namespace NHibernate3.Entities
     {
         #region Properties
 
+        /// <summary>
+        /// Gets or sets ImagePhoto.
+        /// </summary>
         public virtual Bitmap ImagePhoto
         {
             get
@@ -24,15 +36,35 @@ namespace NHibernate3.Entities
                     return (Bitmap) Image.FromStream(memoryStream);
                 }
             }
+
             set { Picture = ImageToByteArray(value); }
         }
 
+        /// <summary>
+        /// Gets or sets Name.
+        /// </summary>
         public virtual string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets Picture.
+        /// </summary>
         public virtual byte[] Picture { get; set; }
+
+        /// <summary>
+        /// Gets or sets Products.
+        /// </summary>
         public virtual IList<Product> Products { get; set; }
 
         #endregion
 
+        /// <summary>
+        /// The image to byte array.
+        /// </summary>
+        /// <param name="image">
+        /// The image.
+        /// </param>
+        /// <returns>
+        /// </returns>
         private byte[] ImageToByteArray(Image image)
         {
             using (var memoryStream = new MemoryStream())
@@ -52,9 +84,12 @@ namespace NHibernate3.Entities
         #region Constructors
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CategoryMapping"/> class. 
         /// Initializes a new instance of the <see cref="Category"/> class.
         /// </summary>
-        /// <remarks>Initializes a new OR-Mapping.</remarks> 
+        /// <remarks>
+        /// Initializes a new OR-Mapping.
+        /// </remarks>
         public CategoryMapping()
         {
             Table("Categories");

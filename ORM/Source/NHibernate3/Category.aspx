@@ -22,7 +22,7 @@
                 </ul></FooterTemplate>
             <ItemTemplate>
                 <li>
-                    <a href="Product.aspx?categoryId=<%#DataBinder.Eval(Container.DataItem,"Id") %>">
+                    <a href="Product.aspx?categoryId=<%#DataBinder.Eval(Container.DataItem, "Id")%>">
                         <%#DataBinder.Eval(Container.DataItem, "Name")%></a></li>
             </ItemTemplate>
         </asp:Repeater>
