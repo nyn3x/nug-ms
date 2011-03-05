@@ -1,0 +1,9 @@
+#summary One-sentence summary of this page.
+
+
+= Themenvorschläge =
+
+  * Philip: Einführung in MVVM
+  * Logging Log4Net
+  * Henning: SharePoint als Kollaborationsplattform
+  * WCF / WF
