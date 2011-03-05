@@ -1,7 +1,7 @@
-#summary One-sentence summary of this page.
+#Liste mit potentiellen UserGroup Themen
 
 
-= Themenvorschläge =
+== Vorschläge ==
 
   * Philip: Einführung in MVVM
   * Logging Log4Net
