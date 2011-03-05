@@ -1,7 +1,7 @@
 #Liste mit potentiellen UserGroup Themen
 
 
-== Vorschläge ==
+= Vorschläge =
 
   * Philip: Einführung in MVVM
   * Logging Log4Net
