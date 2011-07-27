@@ -9,3 +9,7 @@ Liste mit potentiellen UserGroup Themen
   * WCF / WF
   * Software-Entwicklung mit/für Android
   * Coding Dojo (Kata)
+  * jQuery
+  * MVC
+  * Nant
+  * T4
