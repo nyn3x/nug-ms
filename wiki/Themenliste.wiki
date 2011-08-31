@@ -14,3 +14,4 @@ Liste mit potentiellen UserGroup Themen
   * Nant
   * T4
   * Testing
+  * Ms dynamics
