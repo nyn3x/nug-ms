@@ -5,7 +5,7 @@ Liste mit potentiellen UserGroup Themen
 
   * ~~Philip: Einführung in MVVM~~
   * Logging Log4Net
-  * Henning: SharePoint als Kollaborationsplattform
+  * ~~Henning: SharePoint als Kollaborationsplattform~~
   * WCF / WF
   * Software-Entwicklung mit/für Android
   * Coding Dojo (Kata)
@@ -14,4 +14,5 @@ Liste mit potentiellen UserGroup Themen
   * Nant
   * T4
   * Testing
-  * Ms dynamics
+  * Ms Dynamics CRM
+  * Dependency Injection & IoC mit Castle Windsor
